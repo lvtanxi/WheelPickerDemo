@@ -20,7 +20,7 @@ import com.aigestudio.wheelpicker.R;
  * Time: 09:00
  * Description:
  */
-public abstract class BaseDialog extends DialogFragment implements View.OnClickListener{
+public abstract class BaseDialog extends DialogFragment implements WheelPicker.OnItemSelectedListener,View.OnClickListener{
     protected View contentView;
 
     @Override

@@ -1,15 +1,11 @@
 package com.aigestudio.wheelpicker.widgets;
 
-import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 
 import com.aigestudio.wheelpicker.R;
 import com.aigestudio.wheelpicker.iview.IWheelDatePicker;
-import com.aigestudio.wheelpicker.iview.IWheelDayPicker;
-import com.aigestudio.wheelpicker.iview.IWheelMonthPicker;
-import com.aigestudio.wheelpicker.iview.IWheelYearPicker;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,7 +13,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class WheelDateDialog extends BaseDialog implements WheelPicker.OnItemSelectedListener, IWheelDatePicker, IWheelYearPicker, IWheelMonthPicker, IWheelDayPicker {
+public class WheelDateDialog extends BaseDialog implements  IWheelDatePicker{
     private static final String deFormat = "yyyy年-MM月-dd日";
     private String mCustFormat;
     private SimpleDateFormat mDateFormat;
@@ -158,12 +154,6 @@ public class WheelDateDialog extends BaseDialog implements WheelPicker.OnItemSel
         mPickerDay.setCurved(isCurved);
     }
 
-    public void setTypeface(Typeface tf) {
-        mPickerYear.setTypeface(tf);
-        mPickerMonth.setTypeface(tf);
-        mPickerDay.setTypeface(tf);
-    }
-
 
     @Override
     public void setItemAlignYear(int align) {
@@ -196,82 +186,11 @@ public class WheelDateDialog extends BaseDialog implements WheelPicker.OnItemSel
     }
 
 
-    @Override
-    public void setYearFrame(int start, int end) {
-        mPickerYear.setYearFrame(start, end);
-    }
-
-    @Override
-    public int getYearStart() {
-        return mPickerYear.getYearStart();
-    }
-
-    @Override
-    public void setYearStart(int start) {
-        mPickerYear.setYearStart(start);
-    }
-
-    @Override
-    public int getYearEnd() {
-        return mPickerYear.getYearEnd();
-    }
-
-    @Override
-    public void setYearEnd(int end) {
-        mPickerYear.setYearEnd(end);
-    }
-
-    @Override
-    public int getSelectedYear() {
-        return mPickerYear.getSelectedYear();
-    }
-
-    @Override
-    public void setSelectedYear(int year) {
-        mYear = year;
-        mPickerYear.setSelectedYear(year);
-        mPickerDay.setYear(year);
-    }
-
-    @Override
-    public String getCurrentYear() {
-        return mPickerYear.getCurrentYear();
-    }
-
-    @Override
-    public int getSelectedMonth() {
-        return mPickerMonth.getSelectedMonth();
-    }
-
-    @Override
-    public void setSelectedMonth(int month) {
-        mMonth = month;
-        mPickerMonth.setSelectedMonth(month);
-        mPickerDay.setMonth(month);
-    }
-
-    @Override
-    public String getCurrentMonth() {
-        return mPickerMonth.getCurrentMonth();
-    }
-
-    @Override
-    public int getSelectedDay() {
-        return mPickerDay.getSelectedDay();
-    }
-
-    @Override
     public void setSelectedDay(int day) {
         mDay = day;
         mPickerDay.setSelectedDay(day);
     }
 
-    @Override
-    public String getCurrentDay() {
-        return mPickerDay.getCurrentDay();
-    }
-
-    @Override
     public void setYearAndMonth(int year, int month) {
         mYear = year;
         mMonth = month;
@@ -280,29 +199,6 @@ public class WheelDateDialog extends BaseDialog implements WheelPicker.OnItemSel
         mPickerDay.setYearAndMonth(year, month);
     }
 
-    @Override
-    public int getYear() {
-        return getSelectedYear();
-    }
-
-    @Override
-    public void setYear(int year) {
-        mYear = year;
-        mPickerYear.setSelectedYear(year);
-        mPickerDay.setYear(year);
-    }
-
-    @Override
-    public int getMonth() {
-        return getSelectedMonth();
-    }
-
-    @Override
-    public void setMonth(int month) {
-        mMonth = month;
-        mPickerMonth.setSelectedMonth(month);
-        mPickerDay.setMonth(month);
-    }
 
     @Override
     protected int loadLayoutId() {
