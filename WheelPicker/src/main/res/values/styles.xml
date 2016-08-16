@@ -1,0 +1,44 @@
+<resources>
+
+
+    <style name="dateDialogTheme" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/CustDialogAnimation</item>
+        <!-- 背景有灰度 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="CustDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in_pic</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out_pic</item>
+    </style>
+    <style name="DateDialogStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="wheel_atmospheric">true</item>
+        <item name="wheel_curved">true</item>
+        <item name="wheel_cyclic">true</item>
+        <item name="wheel_indicator">true</item>
+        <item name="wheel_indicator_color">@color/COLOR_BORDER_LINE</item>
+        <item name="wheel_indicator_size">0.5dp</item>
+        <item name="wheel_item_align">center</item>
+        <item name="wheel_item_text_color">@android:color/darker_gray</item>
+        <item name="wheel_item_text_size">22sp</item>
+        <item name="wheel_selected_item_text_color">@android:color/black</item>
+    </style>
+    <style name="DateDialogBtn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+
+
+</resources>
